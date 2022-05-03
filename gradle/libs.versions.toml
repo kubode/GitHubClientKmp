@@ -20,5 +20,4 @@ apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-su
 [bundles]
 
 [plugins]
-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 apollo = { id = "com.apollographql.apollo3", version.ref = "apollo" }
