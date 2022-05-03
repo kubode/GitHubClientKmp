@@ -26,6 +26,9 @@ apollo-mockserver = { module = "com.apollographql.apollo3:apollo-mockserver", ve
 apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
 
 [bundles]
+androidx-compose = ["androidx-activity-compose", "androidx-compose-ui", "androidx-compose-ui-tooling", "androidx-compose-animation"]
+apollo = ["apollo-api", "apollo-runtime", "apollo-normalized-cache", "apollo-normalized-cache-sqlite"]
+apollo-testing = ["apollo-mockserver", "apollo-testing-support"]
 
 [plugins]
 apollo = { id = "com.apollographql.apollo3", version.ref = "apollo" }
