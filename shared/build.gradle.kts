@@ -4,8 +4,6 @@ plugins {
     id("com.android.library")
 }
 
-version = "1.0"
-
 kotlin {
     android()
     iosX64()
