@@ -23,7 +23,7 @@ kotlin {
             baseName = "schema"
         }
     }
-    
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -68,14 +68,15 @@ android {
 }
 
 apollo {
-    packageName.set("com.github.kubode.graphqlkmm.shared.schema")
-}
-
-// ./gradlew downloadApolloSchema
-tasks.withType<com.apollographql.apollo3.gradle.internal.ApolloDownloadSchemaTask>().all {
-    endpoint.set("https://api.github.com/graphql")
-    schema.set("$projectDir/src/commonMain/graphql/com/github/kubode/graphqlkmm/shared/schema/schema.graphqls")
-    val token = loadProperties("$rootDir/local.properties").getProperty("GITHUB_TOKEN")
-    if (token.isNullOrEmpty()) throw IllegalStateException("`GITHUB_TOKEN` not exists in `local.properties`")
-    header = header + "Authorization: bearer $token"
+    // Run `./gradlew downloadGithubApolloSchema` updates `schema.graphqls`.
+    service("github") {
+        packageName.set("com.github.kubode.graphqlkmm.shared.schema")
+        introspection {
+            endpointUrl.set("https://api.github.com/graphql")
+            schemaFile.set(file("src/commonMain/graphql/com/github/kubode/graphqlkmm/shared/schema/schema.graphqls"))
+            val token = loadProperties("$rootDir/local.properties").getProperty("GITHUB_TOKEN")
+            if (token.isNullOrEmpty()) throw IllegalStateException("`GITHUB_TOKEN` not exists in `local.properties`")
+            headers.put("Authorization", "bearer $token")
+        }
+    }
 }
