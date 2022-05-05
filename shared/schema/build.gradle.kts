@@ -18,8 +18,8 @@ kotlin {
 }
 
 apollo {
-    // Run `./gradlew downloadApolloSchema` updates `schema.graphqls`.
     packageName.set("com.github.kubode.graphqlkmm.shared.schema")
+    // Run `./gradlew downloadServiceApolloSchemaFromIntrospection` updates `schema.graphqls`.
     introspection {
         endpointUrl.set("https://api.github.com/graphql")
         schemaFile.set(file("src/commonMain/graphql/schema.graphqls"))
