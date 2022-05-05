@@ -18,6 +18,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "GitHubKMM"
 include(":androidApp")
-include(":shared")
+include(":shared:umbrella")
 include(":shared:schema")
 include(":shared:feature:search")

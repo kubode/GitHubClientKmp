@@ -2,15 +2,15 @@ PODS:
   - shared (1.0)
 
 DEPENDENCIES:
-  - shared (from `../shared`)
+  - shared (from `../shared/umbrella`)
 
 EXTERNAL SOURCES:
   shared:
-    :path: "../shared"
+    :path: "../shared/umbrella"
 
 SPEC CHECKSUMS:
-  shared: 07cac7993e4f05eda6b76f3a213b070947c3b79f
+  shared: 68779f9653511dd7c9728c66fa688cb902037d46
 
-PODFILE CHECKSUM: f282da88f39e69507b0a255187c8a6b644477756
+PODFILE CHECKSUM: 87f5078cbd8b19e77c859560830295a1f5ccc51a
 
 COCOAPODS: 1.11.2

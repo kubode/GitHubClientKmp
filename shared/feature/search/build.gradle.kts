@@ -8,7 +8,7 @@ configureKotlinMultiplatformProjectWithDefault()
 
 kotlin {
     sourceSets["commonMain"].dependencies {
-        apolloMetadata(projects.shared.schema)
+//        apolloMetadata(projects.shared.schema)
         implementation(projects.shared.schema)
     }
     sourceSets["commonTest"].dependencies {
