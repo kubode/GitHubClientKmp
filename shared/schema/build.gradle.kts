@@ -10,7 +10,7 @@ configureKotlinMultiplatformProjectWithDefault()
 
 kotlin {
     sourceSets["commonMain"].dependencies {
-        implementation(libs.apollo.api)
+        api(libs.apollo.api)
     }
     sourceSets["commonTest"].dependencies {
         implementation(libs.kotlin.test)
@@ -18,18 +18,16 @@ kotlin {
 }
 
 apollo {
-    // Run `./gradlew downloadGithubApolloSchema` updates `schema.graphqls`.
-    service("github") {
-        packageName.set("com.github.kubode.graphqlkmm.shared.schema")
-        introspection {
-            endpointUrl.set("https://api.github.com/graphql")
-            schemaFile.set(file("src/commonMain/graphql/com/github/kubode/graphqlkmm/shared/schema/schema.graphqls"))
-            val token = loadProperties("$rootDir/local.properties").getProperty("GITHUB_TOKEN")
-            if (token.isNullOrEmpty()) throw IllegalStateException("`GITHUB_TOKEN` not exists in `local.properties`")
-            headers.put("Authorization", "bearer $token")
-        }
-        // To make this module to schema-module
-        // https://www.apollographql.com/docs/kotlin/advanced/multi-modules
-        generateApolloMetadata.set(true)
+    // Run `./gradlew downloadApolloSchema` updates `schema.graphqls`.
+    packageName.set("com.github.kubode.graphqlkmm.shared.schema")
+    introspection {
+        endpointUrl.set("https://api.github.com/graphql")
+        schemaFile.set(file("src/commonMain/graphql/schema.graphqls"))
+        val token = loadProperties("$rootDir/local.properties").getProperty("GITHUB_TOKEN")
+        if (token.isNullOrEmpty()) throw IllegalStateException("`GITHUB_TOKEN` not exists in `local.properties`")
+        headers.put("Authorization", "bearer $token")
     }
+    // To make this module to schema-module
+    // https://www.apollographql.com/docs/kotlin/advanced/multi-modules
+    generateApolloMetadata.set(true)
 }
