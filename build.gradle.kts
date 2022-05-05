@@ -13,11 +13,6 @@ buildscript {
 allprojects {
     group = "com.github.kubode"
     version = "1.0"
-
-    repositories {
-        google()
-        mavenCentral()
-    }
 }
 
 tasks.register<Delete>("clean") {

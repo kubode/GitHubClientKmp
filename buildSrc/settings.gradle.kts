@@ -1,5 +1,3 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
 pluginManagement {
     repositories {
         google()
@@ -14,10 +12,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
     }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
 }
-
-rootProject.name = "GitHubKMM"
-include(":androidApp")
-include(":shared")
-include(":shared:schema")
-include(":shared:feature:search")
