@@ -69,7 +69,6 @@ android {
 
 apollo {
     packageName.set("com.github.kubode.graphqlkmm.shared.schema")
-    schemaFile.set(file("src/commonMain/graphql/com/github/kubode/graphqlkmm/shared/schema/schema.graphqls"))
 }
 
 // ./gradlew downloadApolloSchema
