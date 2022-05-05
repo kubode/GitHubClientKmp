@@ -28,5 +28,8 @@ apollo {
             if (token.isNullOrEmpty()) throw IllegalStateException("`GITHUB_TOKEN` not exists in `local.properties`")
             headers.put("Authorization", "bearer $token")
         }
+        // To make this module to schema-module
+        // https://www.apollographql.com/docs/kotlin/advanced/multi-modules
+        generateApolloMetadata.set(true)
     }
 }
