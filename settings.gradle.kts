@@ -11,3 +11,4 @@ pluginManagement {
 rootProject.name = "GitHubKMM"
 include(":androidApp")
 include(":shared")
+include(":shared:schema")
