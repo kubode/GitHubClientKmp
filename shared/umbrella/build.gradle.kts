@@ -20,7 +20,7 @@ kotlin {
 
     sourceSets["commonMain"].dependencies {
         // depends all feature modules as api
-        projects.shared.feature.dependencyProject.subprojects.forEach { api(it) }
+        featureSubprojects.forEach { api(it) }
     }
 
     cocoapods {
