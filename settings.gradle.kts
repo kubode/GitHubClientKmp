@@ -19,5 +19,5 @@ dependencyResolutionManagement {
 rootProject.name = "GitHubKMM"
 include(":androidApp")
 include(":shared:umbrella")
-include(":shared:schema")
+include(":shared:graphql:schema")
 include(":shared:feature:search")

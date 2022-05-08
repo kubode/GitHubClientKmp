@@ -8,7 +8,7 @@ configureKotlinMultiplatformProjectWithDefault()
 
 kotlin {
     sourceSets["commonMain"].dependencies {
-        implementation(projects.shared.schema)
+        implementation(projects.shared.graphql.schema)
     }
     sourceSets["commonTest"].dependencies {
         implementation(kotlin("test"))
@@ -16,7 +16,7 @@ kotlin {
 }
 
 dependencies {
-    apolloMetadata(projects.shared.schema)
+    apolloMetadata(projects.shared.graphql.schema)
 }
 
 apollo {
