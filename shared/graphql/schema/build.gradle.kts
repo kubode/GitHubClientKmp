@@ -12,9 +12,6 @@ kotlin {
     sourceSets["commonMain"].dependencies {
         api(libs.apollo.api)
     }
-    sourceSets["commonTest"].dependencies {
-        implementation(libs.kotlin.test)
-    }
 }
 
 apollo {
