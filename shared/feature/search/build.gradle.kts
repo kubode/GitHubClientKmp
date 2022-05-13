@@ -1,10 +1,7 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.android.library")
+    id("githubkmm.multiplatform")
     alias(libs.plugins.apollo)
 }
-
-configureKotlinMultiplatformProjectWithDefault()
 
 kotlin {
     sourceSets["commonMain"].dependencies {

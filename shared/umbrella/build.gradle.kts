@@ -1,12 +1,9 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
-    kotlin("multiplatform")
+    id("githubkmm.multiplatform")
     kotlin("native.cocoapods")
-    id("com.android.library")
 }
-
-configureKotlinMultiplatformProjectWithDefault()
 
 kotlin {
     val featureSubprojects = projects.shared.feature.dependencyProject.subprojects

@@ -2,11 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.konan.properties.loadProperties
 
 plugins {
-    kotlin("multiplatform")
-    id("com.android.library")
+    id("githubkmm.multiplatform")
 }
-
-configureKotlinMultiplatformProjectWithDefault()
 
 kotlin {
     sourceSets["commonMain"].dependencies {
