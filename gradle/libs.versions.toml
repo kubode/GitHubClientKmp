@@ -4,7 +4,7 @@ kotlinx-coroutines = "1.6.1-native-mt"
 android-gradle-plugin = "7.2.0"
 apollo = "3.3.0"
 androidx-activity = "1.4.0"
-androidx-compose = "1.1.1"
+androidx-compose = "1.2.0-beta01"
 compose-multiplatform = "1.2.0-alpha01-dev683"
 
 [libraries]
