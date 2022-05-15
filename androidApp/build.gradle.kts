@@ -11,17 +11,25 @@ android {
         targetSdk = 32
         versionCode = 1
         versionName = "1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.asProvider().get()
     }
 }
 
 dependencies {
     implementation(projects.shared.umbrella)
-    implementation("com.google.android.material:material:1.6.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
+    implementation(libs.bundles.androidx.compose)
+    debugImplementation(libs.bundles.androidx.compose.debug)
+    androidTestImplementation(libs.bundles.androidx.compose.test)
 }
