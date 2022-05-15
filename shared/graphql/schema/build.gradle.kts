@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.konan.properties.loadProperties
 
 plugins {
-    id("githubkmm.multiplatform")
+    id("githubclient.multiplatform")
     alias(libs.plugins.apollo)
 }
 
@@ -12,7 +12,7 @@ kotlin {
 }
 
 apollo {
-    packageName.set("com.github.kubode.graphqlkmm.shared.schema")
+    packageName.set("com.github.kubode.githubclient.shared.schema")
     // Run `./gradlew downloadServiceApolloSchemaFromIntrospection` updates `schema.graphqls`.
     introspection {
         endpointUrl.set("https://api.github.com/graphql")

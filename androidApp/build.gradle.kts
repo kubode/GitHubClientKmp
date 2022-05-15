@@ -6,7 +6,7 @@ plugins {
 android {
     compileSdk = 32
     defaultConfig {
-        applicationId = "com.github.kubode.githubkmm.android"
+        applicationId = "com.github.kubode.githubclient.android"
         minSdk = 26
         targetSdk = 32
         versionCode = 1

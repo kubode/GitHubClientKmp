@@ -11,7 +11,7 @@ buildscript {
 }
 
 allprojects {
-    group = "com.github.kubode"
+    group = "com.github.kubode.githubclient"
     version = "1.0"
 }
 

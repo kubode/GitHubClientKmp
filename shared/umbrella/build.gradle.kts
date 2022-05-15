@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
-    id("githubkmm.multiplatform")
+    id("githubclient.multiplatform")
     kotlin("native.cocoapods")
 }
 

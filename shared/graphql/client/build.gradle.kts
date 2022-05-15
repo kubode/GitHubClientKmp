@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.konan.properties.loadProperties
 
 plugins {
-    id("githubkmm.multiplatform")
+    id("githubclient.multiplatform")
 }
 
 kotlin {

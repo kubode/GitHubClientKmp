@@ -1,4 +1,4 @@
-package com.github.kubode.github.shared.feature.search
+package com.github.kubode.githubclient.shared.feature.search
 
 class Greeting {
     fun greeting(): String {

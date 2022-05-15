@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.github.kubode.gihtubkmm.buildlogic"
+group = "com.github.kubode.githubclient.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8

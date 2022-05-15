@@ -1,5 +1,5 @@
 plugins {
-    id("githubkmm.multiplatform")
+    id("githubclient.multiplatform")
     alias(libs.plugins.apollo)
 }
 
@@ -17,5 +17,5 @@ dependencies {
 }
 
 apollo {
-    packageName.set("com.github.kubode.graphqlkmm.shared.feature.search")
+    packageName.set("com.github.kubode.githubclient.shared.feature.search")
 }

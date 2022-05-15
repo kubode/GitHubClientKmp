@@ -1,4 +1,4 @@
-package com.github.kubode.githubkmm.android.ui.theme
+package com.github.kubode.githubclient.android.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.github.kubode.githubkmm.android
+package com.github.kubode.githubclient.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.github.kubode.githubkmm.android.ui.theme.GitHubKMMTheme
+import com.github.kubode.githubclient.android.ui.theme.GitHubKMMTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
