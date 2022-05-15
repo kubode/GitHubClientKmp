@@ -5,6 +5,7 @@ android-gradle-plugin = "7.2.0"
 apollo = "3.3.0"
 androidx-activity = "1.4.0"
 androidx-compose = "1.2.0-beta01"
+androidx-compose-material3 = "1.0.0-alpha11"
 compose-multiplatform = "1.2.0-alpha01-dev683"
 
 [libraries]
@@ -16,8 +17,11 @@ android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androidx-compose" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx-compose" }
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "androidx-compose" }
 androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose" }
 androidx-compose-animation = { module = "androidx.compose.animation:animation", version.ref = "androidx-compose" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "androidx-compose-material3" }
 apollo-api = { module = "com.apollographql.apollo3:apollo-api", version.ref = "apollo" }
 apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
 apollo-normalized-cache = { module = "com.apollographql.apollo3:apollo-normalized-cache", version.ref = "apollo" }
@@ -26,7 +30,9 @@ apollo-mockserver = { module = "com.apollographql.apollo3:apollo-mockserver", ve
 apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
 
 [bundles]
-androidx-compose = ["androidx-activity-compose", "androidx-compose-ui", "androidx-compose-ui-tooling", "androidx-compose-animation"]
+androidx-compose = ["androidx-activity-compose", "androidx-compose-ui", "androidx-compose-ui-tooling-preview", "androidx-compose-animation", "androidx-compose-material3"]
+androidx-compose-debug = ["androidx-compose-ui-tooling", "androidx-compose-ui-test-manifest"]
+androidx-compose-test = ["androidx-compose-ui-test-junit4"]
 apollo = ["apollo-api", "apollo-runtime", "apollo-normalized-cache", "apollo-normalized-cache-sqlite"]
 apollo-testing = ["apollo-mockserver", "apollo-testing-support"]
 
