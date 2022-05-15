@@ -20,6 +20,9 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Insert GITHUB_TOKEN to local.properties
+      run: echo "GITHUB_TOKEN={{ secrets.GITHUB_TOKEN }}" >> local.properties
+
     - name: Gradle Build Action
       uses: gradle/gradle-build-action@v2.1.5
       with:
