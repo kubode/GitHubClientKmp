@@ -28,6 +28,8 @@ kotlin {
         name = "shared"
         framework {
             baseName = "shared"
+            // export all feature modules
+            featureSubprojects.forEach { export(it) }
         }
     }
 }
