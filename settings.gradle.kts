@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GitHubKMM"
+rootProject.name = "GitHubClientKmp"
 include(":androidApp")
 include(":shared:umbrella")
 include(":shared:graphql:client")
