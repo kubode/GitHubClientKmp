@@ -6,7 +6,7 @@ apollo = "3.3.0"
 androidx-activity = "1.4.0"
 androidx-compose = "1.2.0-beta01"
 androidx-compose-material3 = "1.0.0-alpha11"
-compose-multiplatform = "1.2.0-alpha01-dev683"
+compose-multiplatform = "1.2.0-alpha01-dev686"
 
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
