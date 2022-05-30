@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     id("githubclient.multiplatform")
     kotlin("native.cocoapods")
+    alias(libs.plugins.compose.multiplatform)
 }
 
 kotlin {
@@ -18,6 +19,9 @@ kotlin {
     sourceSets["commonMain"].dependencies {
         // depends all feature modules as api
         featureSubprojects.forEach { api(it) }
+        dependencies {
+            implementation(compose.ui)
+        }
     }
 
     cocoapods {
