@@ -1,11 +1,24 @@
+# TODO: pagination
 query SearchRepositories($query: String!) {
     search(query: $query, type: REPOSITORY, first: 20) {
         edges {
             node {
-                ... on Repository {
-                    name
-                }
+                ...RepositoryFragment
             }
         }
     }
+}
+
+fragment RepositoryFragment on Repository {
+    id
+    nameWithOwner
+    description
+    isPrivate
+    primaryLanguage {
+        id
+        name
+        color
+    }
+    stargazerCount
+    updatedAt
 }
