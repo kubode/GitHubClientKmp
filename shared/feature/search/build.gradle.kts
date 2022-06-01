@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     sourceSets["commonMain"].dependencies {
-        implementation(projects.shared.graphql.schema)
+        implementation(projects.shared.graphql.client)
         api(compose.ui)
         api(compose.foundation)
         api(compose.material)
