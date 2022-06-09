@@ -1,30 +1,24 @@
 package com.github.kubode.githubclient.android.ui.theme
 
 import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColorScheme
-import androidx.compose.material.dynamicDarkColorScheme
-import androidx.compose.material.dynamicLightColorScheme
-import androidx.compose.material.lightColorScheme
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
 
-private val DarkColorScheme = darkColorScheme(
+private val DarkColors = darkColors(
     primary = Purple80,
     secondary = PurpleGrey80,
-    tertiary = Pink80
 )
 
-private val LightColorScheme = lightColorScheme(
+private val LightColors = lightColors(
     primary = Purple40,
     secondary = PurpleGrey40,
-    tertiary = Pink40
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -40,18 +34,9 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun GitHubKMMTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
+    val colorScheme = if (darkTheme) DarkColors else LightColors
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -61,7 +46,7 @@ fun GitHubKMMTheme(
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colors = colorScheme,
         typography = Typography,
         content = content
     )
