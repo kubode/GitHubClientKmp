@@ -28,7 +28,7 @@ kotlin {
 }
 
 val generateGithubToken by tasks.registering {
-    val packageName = "com.github.kubode.shared.graphql.client"
+    val packageName = "com.github.kubode.githubclient.shared.graphql.client"
     val fileName = "GeneratedGitHubToken.kt"
     val propName = "generatedGitHubToken"
     val githubToken = loadProperties("$rootDir/local.properties").getProperty("GITHUB_TOKEN")

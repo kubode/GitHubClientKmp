@@ -20,6 +20,7 @@ kotlin {
         // depends all feature modules as api
         featureSubprojects.forEach { api(it) }
         dependencies {
+            implementation(projects.shared.graphql.client)
             implementation(compose.ui)
         }
     }

@@ -1,4 +1,4 @@
-package com.github.kubode.shared.graphql.client
+package com.github.kubode.githubclient.shared.graphql.client
 
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.api.http.HttpRequest
@@ -9,7 +9,10 @@ import com.apollographql.apollo3.network.http.HttpNetworkTransport
 import com.apollographql.apollo3.network.http.LoggingInterceptor
 
 private class AuthorizationInterceptor : HttpInterceptor {
-    override suspend fun intercept(request: HttpRequest, chain: HttpInterceptorChain): HttpResponse {
+    override suspend fun intercept(
+        request: HttpRequest,
+        chain: HttpInterceptorChain
+    ): HttpResponse {
         return chain.proceed(
             request.newBuilder()
                 .addHeader("Authorization", "bearer $GITHUB_TOKEN")
@@ -19,9 +22,9 @@ private class AuthorizationInterceptor : HttpInterceptor {
 }
 
 val apolloClient: ApolloClient = ApolloClient.Builder()
-    .serverUrl("https://api.github.com/graphql")
     .networkTransport(
         HttpNetworkTransport.Builder()
+            .serverUrl("https://api.github.com/graphql")
             .addInterceptor(AuthorizationInterceptor())
             .addInterceptor(LoggingInterceptor())
             .build()

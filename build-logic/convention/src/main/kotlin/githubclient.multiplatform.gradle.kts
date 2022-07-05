@@ -28,6 +28,13 @@ kotlin {
     }
 }
 
+// Workaround: https://github.com/JetBrains/compose-jb/pull/2164
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java) {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 android {
     compileSdk = 32
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")

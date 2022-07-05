@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    alias(libs.plugins.compose.multiplatform)
 }
 
 android {
@@ -19,17 +20,9 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.get()
-    }
 }
 
 dependencies {
     implementation(projects.shared.umbrella)
-    implementation(libs.bundles.androidx.compose)
-    debugImplementation(libs.bundles.androidx.compose.debug)
-    androidTestImplementation(libs.bundles.androidx.compose.test)
+    implementation(libs.androidx.activity.compose)
 }
