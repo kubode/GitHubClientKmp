@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.6.21"
+kotlin = "1.7.10"
 kotlinx-coroutines = "1.6.4"
 android-gradle-plugin = "7.2.2"
 apollo = "3.5.0"
