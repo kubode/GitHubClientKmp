@@ -2,7 +2,7 @@
 kotlin = "1.7.10"
 kotlinx-coroutines = "1.6.4"
 android-gradle-plugin = "7.3.0"
-apollo = "3.5.0"
+apollo = "3.6.0"
 androidx-activity = "1.5.1"
 compose-multiplatform = "1.2.0-alpha01-dev778"
 
