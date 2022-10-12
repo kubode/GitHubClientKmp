@@ -4,7 +4,7 @@ kotlinx-coroutines = "1.6.4"
 android-gradle-plugin = "7.3.0"
 apollo = "3.6.2"
 androidx-activity = "1.6.0"
-compose-multiplatform = "1.2.0-beta03"
+compose-multiplatform = "1.2.0"
 
 [libraries]
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
