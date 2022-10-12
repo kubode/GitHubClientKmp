@@ -11,8 +11,11 @@ import androidx.compose.material.Card
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.CompositionLocal
+import androidx.compose.runtime.compositionLocalOf
+import androidx.compose.runtime.*
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,12 +24,17 @@ import androidx.compose.ui.unit.sp
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.cache.normalized.watch
 import com.github.kubode.githubclient.shared.feature.search.fragment.RepositoryFragment
+import com.github.kubode.githubclient.shared.graphql.client.apolloClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 
+val LocalApolloClient = compositionLocalOf { apolloClient }
+
 @Composable
-fun SearchScreen(viewModel: RepositorySearchViewModel) {
+fun SearchScreen() {
+    val apolloClient = LocalApolloClient.current
+    val viewModel = remember { RepositorySearchViewModel(apolloClient) }
     Search(viewModel.uiState)
 }
 
