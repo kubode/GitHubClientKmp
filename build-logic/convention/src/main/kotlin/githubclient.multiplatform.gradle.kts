@@ -9,11 +9,10 @@ kotlin {
     // jvm("desktop")
     android()
     ios()
-    // TODO: compose-jb:1.2.0-alpha01-dev686 not supports yet.
-    // Apple Silicon target
-//    iosSimulatorArm64()
-//    sourceSets["iosSimulatorArm64Main"].dependsOn(sourceSets["iosMain"])
-//    sourceSets["iosSimulatorArm64Test"].dependsOn(sourceSets["iosTest"])
+    iosSimulatorArm64()
+    // TODO: Move to sourceSets {} and dependsOn(iosMain)
+    sourceSets["iosSimulatorArm64Main"].dependsOn(sourceSets["iosMain"])
+    sourceSets["iosSimulatorArm64Test"].dependsOn(sourceSets["iosTest"])
 
     // opt-in @OptIn
     sourceSets.all {
