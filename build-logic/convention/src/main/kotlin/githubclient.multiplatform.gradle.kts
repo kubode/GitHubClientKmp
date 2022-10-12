@@ -36,10 +36,10 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java) {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = COMPILE_SDK
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 26
-        targetSdk = 33
+        minSdk = MIN_SDK
+        targetSdk = TARGET_SDK
     }
 }
