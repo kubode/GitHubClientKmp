@@ -18,9 +18,6 @@ kotlin {
 
 // region: Generate GITHUB_TOKEN
 val generatedGithubTokenSourceDir = file("$buildDir/generated/github-token")
-android {
-    namespace = "com.github.kubode.shared.graphql.client"
-}
 
 kotlin {
     sourceSets {

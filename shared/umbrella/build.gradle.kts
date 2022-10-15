@@ -5,9 +5,6 @@ plugins {
     kotlin("native.cocoapods")
     alias(libs.plugins.compose.multiplatform)
 }
-android {
-    namespace = "com.github.kubode.githubclient.shared.umbrella"
-}
 
 kotlin {
     val featureSubprojects = projects.shared.feature.dependencyProject.subprojects

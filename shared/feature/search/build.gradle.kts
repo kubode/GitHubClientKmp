@@ -21,9 +21,6 @@ kotlin {
 dependencies {
     apolloMetadata(projects.shared.graphql.schema)
 }
-android {
-    namespace = "com.github.kubode.githubclient.shared.feature.search"
-}
 
 apollo {
     packageName.set("com.github.kubode.githubclient.shared.feature.search")
