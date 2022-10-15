@@ -8,9 +8,19 @@ kotlin {
     android()
     ios()
     iosSimulatorArm64()
-    // TODO: Move to sourceSets {} and dependsOn(iosMain)
-    sourceSets["iosSimulatorArm64Main"].dependsOn(sourceSets["iosMain"])
-    sourceSets["iosSimulatorArm64Test"].dependsOn(sourceSets["iosTest"])
+
+    sourceSets {
+        val iosMain by getting {
+        }
+        val iosTest by getting {
+        }
+        val iosSimulatorArm64Main by getting {
+            dependsOn(iosMain)
+        }
+        val iosSimulatorArm64Test by getting {
+            dependsOn(iosTest)
+        }
+    }
 }
 
 android {
