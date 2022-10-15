@@ -5,7 +5,7 @@ import com.github.kubode.githubclient.shared.core.designsystem.GitHubClientKmpTh
 import com.github.kubode.githubclient.shared.feature.search.SearchScreen
 
 @Composable
-fun GitHubClientKmpApp() {
+fun GitHubClientApp() {
     // TODO: Navigation
     GitHubClientKmpTheme {
         SearchScreen()
