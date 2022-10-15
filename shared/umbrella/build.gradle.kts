@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-
 plugins {
     id("githubclient.multiplatform")
     kotlin("native.cocoapods")
@@ -7,22 +5,11 @@ plugins {
 }
 
 kotlin {
-    val featureSubprojects = projects.shared.feature.dependencyProject.subprojects
-
-    targets.filterIsInstance<KotlinNativeTarget>().forEach { target ->
-        target.binaries.framework {
-            // export all feature modules
-            featureSubprojects.forEach { export(it) }
-        }
-    }
-
     sourceSets["commonMain"].dependencies {
-        // depends all feature modules as api
-        featureSubprojects.forEach { api(it) }
-        dependencies {
-            implementation(projects.shared.graphql.client)
-            implementation(compose.ui)
-        }
+        // depends all feature modules
+        projects.shared.feature.dependencyProject.subprojects.forEach { implementation(it) }
+        implementation(projects.shared.graphql.client)
+        implementation(compose.ui)
     }
 
     cocoapods {
@@ -31,10 +18,5 @@ kotlin {
         ios.deploymentTarget = "14.1"
         podfile = project.file("../../iosApp/Podfile")
         name = "shared"
-        framework {
-            baseName = "shared"
-            // export all feature modules
-            featureSubprojects.forEach { export(it) }
-        }
     }
 }

@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../shared/umbrella"
 
 SPEC CHECKSUMS:
-  shared: ad116dcc00f5a1cdc869b6efb5b9b04777c8bf6b
+  shared: bbe886c5e7c09d9f4e757c8a710dbb5c6b8eed4d
 
 PODFILE CHECKSUM: 87f5078cbd8b19e77c859560830295a1f5ccc51a
 
