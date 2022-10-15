@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Card
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -27,6 +29,7 @@ import com.github.kubode.githubclient.shared.feature.search.fragment.RepositoryF
 import com.github.kubode.githubclient.shared.graphql.client.apolloClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 val LocalApolloClient = compositionLocalOf { apolloClient }
@@ -43,9 +46,16 @@ internal fun Search(uiState: SearchUiState) {
     Scaffold(
         topBar = {},
     ) {
+        // TODO: Paging
+        val state = rememberLazyListState()
+        LaunchedEffect(Unit) {
+            snapshotFlow { state.layoutInfo.visibleItemsInfo.lastOrNull()?.offset }
+                .collect { println("XX: $it")}
+        }
         LazyColumn(
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp),
+            state = state,
         ) {
             items(uiState.repositories, key = { it.id }) {
                 Repository(it)
