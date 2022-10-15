@@ -9,6 +9,7 @@ kotlin {
             dependencies {
                 // depends all feature modules
                 projects.shared.feature.dependencyProject.subprojects.forEach { implementation(it) }
+                implementation(projects.shared.core.designsystem)
             }
         }
     }

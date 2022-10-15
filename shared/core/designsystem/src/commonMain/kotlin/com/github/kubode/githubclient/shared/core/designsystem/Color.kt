@@ -1,4 +1,4 @@
-package com.github.kubode.githubclient.shared.umbrella
+package com.github.kubode.githubclient.shared.core.designsystem
 
 import androidx.compose.ui.graphics.Color
 
