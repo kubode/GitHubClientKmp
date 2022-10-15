@@ -27,7 +27,7 @@ private val LightColors = lightColors(
 )
 
 @Composable
-fun GitHubClientKmpTheme(
+fun GitHubClientTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,
 ) {
