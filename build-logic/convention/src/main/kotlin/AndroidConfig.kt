@@ -7,7 +7,7 @@ internal const val COMPILE_SDK = 33
 internal const val TARGET_SDK = 33
 internal const val MIN_SDK = 26
 
-internal fun CommonExtension<*, *, *, *>.configureCommonExtension() {
+internal fun CommonExtension<*, *, *, *>.configureMultiplatform() {
     namespace = "com.github.kubode.githubclient.android"
     compileSdk = COMPILE_SDK
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -28,7 +28,5 @@ private fun AppExtension.configureAppExtension() {
 }
 
 private fun LibraryExtension.configureLibraryExtension() {
-    defaultConfig {
-        targetSdk = TARGET_SDK
-    }
+    namespace = "".replace(":", ".").replace("-", "")
 }
