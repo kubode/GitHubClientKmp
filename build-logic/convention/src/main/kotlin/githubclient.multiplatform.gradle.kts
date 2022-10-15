@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    id("githubclient.android.library")
+    id("githubclient.multiplatform.android")
 }
 
 kotlin {
