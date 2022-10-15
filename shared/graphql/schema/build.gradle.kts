@@ -4,6 +4,9 @@ plugins {
     id("githubclient.multiplatform")
     alias(libs.plugins.apollo)
 }
+android {
+    namespace = "com.github.kubode.githubclient.shared.graphql.schema"
+}
 
 kotlin {
     sourceSets["commonMain"].dependencies {
