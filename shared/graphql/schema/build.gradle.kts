@@ -16,7 +16,7 @@ kotlin {
 }
 
 apollo {
-    packageName.set("com.github.api.graphql")
+    packageName.set(project.namespace)
     // Run `./gradlew downloadServiceApolloSchemaFromIntrospection` updates `schema.graphqls`.
     introspection {
         endpointUrl.set("https://api.github.com/graphql")
