@@ -1,15 +1,16 @@
 plugins {
-    id("githubclient.multiplatform")
+    id("githubclient.multiplatform.compose")
     kotlin("native.cocoapods")
-    alias(libs.plugins.compose.multiplatform)
 }
 
 kotlin {
-    sourceSets["commonMain"].dependencies {
-        // depends all feature modules
-        projects.shared.feature.dependencyProject.subprojects.forEach { implementation(it) }
-        implementation(projects.shared.graphql.client)
-        implementation(compose.ui)
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                // depends all feature modules
+                projects.shared.feature.dependencyProject.subprojects.forEach { implementation(it) }
+            }
+        }
     }
 
     cocoapods {

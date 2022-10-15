@@ -6,8 +6,12 @@ plugins {
 }
 
 kotlin {
-    sourceSets["commonMain"].dependencies {
-        api(libs.apollo.api)
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                api(libs.apollo.api)
+            }
+        }
     }
 }
 

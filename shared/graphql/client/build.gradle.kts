@@ -6,13 +6,18 @@ plugins {
 }
 
 kotlin {
-    sourceSets["commonMain"].dependencies {
-        api(libs.apollo.runtime)
-        api(libs.apollo.normalized.cache)
-    }
-    sourceSets["commonTest"].dependencies {
-        implementation(libs.kotlin.test)
-        implementation(libs.bundles.apollo.testing)
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                api(libs.apollo.runtime)
+                api(libs.apollo.normalized.cache)
+            }
+        }
+        val commonTest by getting {
+            dependencies {
+                implementation(libs.bundles.apollo.testing)
+            }
+        }
     }
 }
 
@@ -38,7 +43,8 @@ val generateGithubToken by tasks.registering {
 
     doLast {
         generatedGithubTokenSourceDir.delete()
-        val outputDir = File(generatedGithubTokenSourceDir, packageName.replace('.', File.separatorChar))
+        val outputDir =
+            File(generatedGithubTokenSourceDir, packageName.replace('.', File.separatorChar))
         mkdir(outputDir)
 
         File(outputDir, fileName).writeText(

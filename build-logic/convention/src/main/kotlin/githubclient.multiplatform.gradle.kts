@@ -10,6 +10,13 @@ kotlin {
     iosSimulatorArm64()
 
     sourceSets {
+        val commonMain by getting {
+        }
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
         val iosMain by getting {
         }
         val iosTest by getting {
@@ -24,8 +31,7 @@ kotlin {
 }
 
 android {
-    // e.g. :shared:feature:search -> com.github.kubode.githubclient.shared.feature.search
-    namespace = "${project.group}${project.path.replace(":", ".").replace("-", "")}"
+    namespace = project.namespace
 
     compileSdk = COMPILE_SDK
     defaultConfig {
