@@ -13,5 +13,15 @@ kotlin {
                 implementation(compose.runtime)
             }
         }
+        val androidMain by getting {
+            dependencies {
+                implementation(compose.preview)
+            }
+        }
+        val androidDebug by getting {
+            dependencies {
+                implementation(compose.uiTooling)
+            }
+        }
     }
 }
