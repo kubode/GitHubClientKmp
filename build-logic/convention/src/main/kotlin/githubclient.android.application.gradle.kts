@@ -3,6 +3,12 @@ plugins {
     kotlin("android")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(JVM_TOOLCHAIN))
+    }
+}
+
 android {
     namespace = "${project.group}.android"
 

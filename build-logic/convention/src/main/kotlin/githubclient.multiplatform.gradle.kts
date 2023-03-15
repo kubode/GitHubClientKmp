@@ -4,6 +4,8 @@ plugins {
 }
 
 kotlin {
+    jvmToolchain(JVM_TOOLCHAIN)
+
     // jvm("desktop")
     android()
     ios()
@@ -27,6 +29,12 @@ kotlin {
         val iosSimulatorArm64Test by getting {
             dependsOn(iosTest)
         }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
