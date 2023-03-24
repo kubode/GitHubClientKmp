@@ -3,7 +3,7 @@ kotlin = "1.8.10"
 kotlinx-coroutines = "1.6.4"
 android-gradle-plugin = "8.1.0-alpha10"
 apollo = "3.7.5"
-androidx-activity = "1.6.1"
+androidx-activity = "1.7.0"
 compose-multiplatform = "1.3.1"
 
 [libraries]
