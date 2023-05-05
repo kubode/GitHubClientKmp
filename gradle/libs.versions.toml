@@ -1,6 +1,6 @@
 [versions]
 kotlin = "1.8.10"
-kotlinx-coroutines = "1.6.4"
+kotlinx-coroutines = "1.7.0"
 android-gradle-plugin = "8.1.0-beta01"
 apollo = "3.8.1"
 androidx-activity = "1.7.1"
