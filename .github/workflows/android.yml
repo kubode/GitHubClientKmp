@@ -24,6 +24,6 @@ jobs:
       run: echo "GITHUB_TOKEN={{ secrets.GITHUB_TOKEN }}" >> local.properties
 
     - name: Gradle Build Action
-      uses: gradle/gradle-build-action@v2.5.1
+      uses: gradle/gradle-build-action@v2.6.0
       with:
         arguments: bundle
