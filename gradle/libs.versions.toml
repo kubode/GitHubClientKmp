@@ -19,6 +19,8 @@ apollo-api = { module = "com.apollographql.apollo3:apollo-api", version.ref = "a
 apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
 apollo-normalized-cache = { module = "com.apollographql.apollo3:apollo-normalized-cache", version.ref = "apollo" }
 apollo-normalized-cache-sqlite = { module = "com.apollographql.apollo3:apollo-normalized-cache-sqlite", version.ref = "apollo" }
+# Not used because it is currently only available on Android.
+apollo-compose-support = { module = "com.apollographql.apollo3:apollo-compose-support", version.ref = "apollo" }
 apollo-mockserver = { module = "com.apollographql.apollo3:apollo-mockserver", version.ref = "apollo" }
 apollo-testing-support = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
 
