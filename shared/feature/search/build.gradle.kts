@@ -7,7 +7,6 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(projects.shared.core.designsystem)
-                implementation(projects.shared.core.ui)
             }
         }
     }

@@ -21,7 +21,6 @@ dependencyResolutionManagement {
 rootProject.name = "GitHubClientKmp"
 include(":androidApp")
 include(":shared:core:designsystem")
-include(":shared:core:ui")
 include(":shared:umbrella")
 include(":shared:graphql:client")
 include(":shared:graphql:schema")
