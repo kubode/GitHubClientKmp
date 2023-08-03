@@ -18,10 +18,5 @@ kotlin {
                 implementation(compose.preview)
             }
         }
-        val androidDebug by getting {
-            dependencies {
-                implementation(compose.uiTooling)
-            }
-        }
     }
 }

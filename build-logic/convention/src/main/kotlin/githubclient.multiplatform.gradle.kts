@@ -46,7 +46,4 @@ android {
         minSdk = MIN_SDK
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    // Move AndroidManifest.xml from src/main to src/androidMain
-    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 }
