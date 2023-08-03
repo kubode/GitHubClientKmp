@@ -29,5 +29,6 @@ apollo {
         // To make this module to schema-module
         // https://www.apollographql.com/docs/kotlin/advanced/multi-modules
         generateApolloMetadata.set(true)
+        generateFragmentImplementations.set(true)
     }
 }
