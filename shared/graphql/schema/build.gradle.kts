@@ -22,7 +22,7 @@ apollo {
         endpointUrl.set("https://api.github.com/graphql")
         schemaFile.set(file("src/commonMain/graphql/schema.graphqls"))
         val token = loadProperties("$rootDir/local.properties").getProperty("GITHUB_TOKEN")
-        if (token.isNullOrEmpty()) throw IllegalStateException("`GITHUB_TOKEN` not exists in `local.properties`")
+        check(!token.isNullOrEmpty()) { "`GITHUB_TOKEN` not exists in `local.properties`" }
         headers.put("Authorization", "bearer $token")
     }
     // To make this module to schema-module
