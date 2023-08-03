@@ -19,5 +19,7 @@ dependencies {
 }
 
 apollo {
-    packageName.set(project.namespace)
+    service("github") {
+        packageName.set(project.namespace)
+    }
 }
