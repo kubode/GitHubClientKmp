@@ -1,5 +1,3 @@
-import org.gradle.kotlin.dsl.dependencies
-
 plugins {
     id("githubclient.multiplatform.compose")
     id("com.apollographql.apollo3")
