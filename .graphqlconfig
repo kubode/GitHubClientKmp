@@ -1,6 +1,6 @@
 {
   "name": "Untitled GraphQL Schema",
-  "schemaPath": "shared/schema/src/commonMain/graphql/schema.graphql",
+  "schemaPath": "shared/graphql/schema/src/commonMain/graphql/schema.graphql",
   "extensions": {
     "endpoints": {
       "Default GraphQL Endpoint": {
