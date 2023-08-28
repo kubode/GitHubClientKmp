@@ -9,12 +9,12 @@
   ],
   "packageRules": [
     {
-      // Grouping Kotlin and Compose Compiler
+      // Grouping Kotlin and Compose
       "matchPackagePrefixes": [
         "org.jetbrains.kotlin:",
-        "androidx.compose.compiler:",
+        "org.jetbrains.compose:",
       ],
-      "groupName": "Kotlin and Compose Compiler",
+      "groupName": "Kotlin and Compose",
     },
   ],
 }
