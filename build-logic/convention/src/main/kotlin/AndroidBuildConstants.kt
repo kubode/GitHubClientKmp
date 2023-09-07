@@ -1,7 +1,7 @@
 import org.gradle.api.Project
 
-internal const val COMPILE_SDK = 33
-internal const val TARGET_SDK = 33
+internal const val COMPILE_SDK = 34
+internal const val TARGET_SDK = 34
 internal const val MIN_SDK = 26
 internal const val JVM_TOOLCHAIN = 19
 
