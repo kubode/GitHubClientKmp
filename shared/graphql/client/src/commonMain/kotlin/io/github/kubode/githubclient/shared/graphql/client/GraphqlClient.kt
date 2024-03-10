@@ -1,4 +1,4 @@
-package com.github.kubode.githubclient.shared.graphql.client
+package io.github.kubode.githubclient.shared.graphql.client
 
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.api.http.HttpRequest
@@ -7,6 +7,7 @@ import com.apollographql.apollo3.network.http.HttpInterceptor
 import com.apollographql.apollo3.network.http.HttpInterceptorChain
 import com.apollographql.apollo3.network.http.HttpNetworkTransport
 import com.apollographql.apollo3.network.http.LoggingInterceptor
+import com.github.kubode.githubclient.shared.graphql.client.GITHUB_TOKEN
 
 private class AuthorizationInterceptor : HttpInterceptor {
     override suspend fun intercept(

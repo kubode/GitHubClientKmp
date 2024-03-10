@@ -1,4 +1,4 @@
-package com.github.kubode.githubclient.shared.feature.search
+package io.github.kubode.githubclient.shared.feature.search
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -21,8 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.cache.normalized.watch
-import com.github.kubode.githubclient.shared.feature.search.fragment.RepositoryFragment
-import com.github.kubode.githubclient.shared.graphql.client.apolloClient
+import io.github.kubode.githubclient.shared.feature.search.fragment.RepositoryFragment
+import io.github.kubode.githubclient.shared.graphql.client.apolloClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
