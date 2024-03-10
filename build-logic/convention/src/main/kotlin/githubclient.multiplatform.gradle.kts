@@ -8,26 +8,20 @@ kotlin {
 
     jvm()
     androidTarget()
-    ios()
+    iosArm64()
     iosSimulatorArm64()
 
     sourceSets {
-        val commonMain by getting {
+        commonMain {
         }
-        val commonTest by getting {
+        commonTest {
             dependencies {
                 implementation(kotlin("test"))
             }
         }
-        val iosMain by getting {
+        iosMain {
         }
-        val iosTest by getting {
-        }
-        val iosSimulatorArm64Main by getting {
-            dependsOn(iosMain)
-        }
-        val iosSimulatorArm64Test by getting {
-            dependsOn(iosTest)
+        iosTest {
         }
     }
 }
