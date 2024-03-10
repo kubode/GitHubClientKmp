@@ -1,17 +1,9 @@
 package com.github.kubode.githubclient.shared.feature.search
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -24,13 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawWithCache
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Paint
-import androidx.compose.ui.graphics.drawOutline
-import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.apollographql.apollo3.ApolloClient
@@ -40,8 +26,6 @@ import com.github.kubode.githubclient.shared.graphql.client.apolloClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-import org.jetbrains.skia.FilterBlurMode
-import org.jetbrains.skia.MaskFilter
 
 val LocalApolloClient = compositionLocalOf { apolloClient }
 
@@ -68,32 +52,6 @@ internal fun Search(uiState: SearchUiState) {
             verticalArrangement = Arrangement.spacedBy(8.dp),
             state = state,
         ) {
-            item {
-                Box(
-                    modifier = Modifier
-                        .padding(32.dp)
-                        .size(64.dp)
-                        .background(Color.White)
-                        .shadow(elevation = 4.dp, shape = CircleShape)
-                )
-            }
-            item {
-                Box(
-                    modifier = Modifier
-                        .padding(32.dp)
-                        .size(64.dp)
-                        .background(Color.White)
-                        .clip(shape = CircleShape)
-                        .drawWithCache {
-                            val outline = CircleShape.createOutline(size, layoutDirection, this)
-                            val paint = Paint().apply {
-                                asFrameworkPaint().maskFilter =
-                                    MaskFilter.makeBlur(FilterBlurMode.OUTER, 4f)
-                            }
-                            onDrawBehind { drawIntoCanvas { it.drawOutline(outline, paint) } }
-                        }
-                )
-            }
             items(uiState.repositories, key = { it.id }) {
                 Repository(it)
             }

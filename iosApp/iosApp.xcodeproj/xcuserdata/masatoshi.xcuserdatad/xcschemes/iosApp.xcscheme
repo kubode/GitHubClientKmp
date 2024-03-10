@@ -16,9 +16,10 @@
       </BuildActionEntries>
    </BuildAction>
    <LaunchAction
-      useCustomWorkingDirectory = "NO"
+      useCustomWorkingDirectory = "YES"
       buildConfiguration = "Debug"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      customWorkingDirectory = "/Users/masatoshi/ghq/github.com/kubode/GitHubClientKmp">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"

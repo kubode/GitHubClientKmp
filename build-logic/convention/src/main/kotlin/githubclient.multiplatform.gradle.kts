@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
@@ -8,8 +10,15 @@ kotlin {
 
     jvm()
     androidTarget()
-    iosArm64()
-    iosSimulatorArm64()
+    val configureIos: KotlinNativeTarget.() -> Unit = {
+        binaries {
+            framework {
+                binaryOption("bundleId", project.namespace)
+            }
+        }
+    }
+    iosArm64(configureIos)
+    iosSimulatorArm64(configureIos)
 
     sourceSets {
         commonMain {
