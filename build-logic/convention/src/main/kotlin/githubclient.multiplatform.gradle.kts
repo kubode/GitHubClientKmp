@@ -6,8 +6,8 @@ plugins {
 kotlin {
     jvmToolchain(JVM_TOOLCHAIN)
 
-    // jvm("desktop")
-    android()
+    jvm()
+    androidTarget()
     ios()
     iosSimulatorArm64()
 
